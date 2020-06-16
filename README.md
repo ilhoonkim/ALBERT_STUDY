@@ -41,5 +41,9 @@ Layer 간에 파라미터를 공유한다고 하더라도 모델 성능이 거�
 
 ## ALBERT 학습 과정   
 간단하게 ALBERT가 기존의 BERT와 달라진 점을 알아보았으니 실제로 BERT와 같이 하나하나 진행하려고 합니다.   
-### 1.프리트레이닝 데이터 만들기
+### 1.Tokenization 
+ALBERT에서는 기존 tokenization과는 달리 .txt 확장자의 사전 파일이 아니라 spm 모델을 input으로 하여 사전으로 사용할 수 있다는 차이가 생겼습니다. 하지만 spm 모델 자체가 가지는 사전은 제 깃헙  BERT Tokenizer 편에서 언급했듯이 바로 사용하기엔 문제가 있다고 생각하여 저는 spm 모델은 사용하지 않고 기존 BERT 방식대로 이미 만들어진 사전 파일을 사용하기로 했고 필요없는 spm 관련 코드는 정리해버림과 동시에 한글 토크나이징에 최적화 되도록 변경하였습니다. 이에 대한 내용은 [제 BERT Tokenizer 깃헙편](https://github.com/ilhoonkim/BertTokenizer)에서 확인할 수 있습니다.   
+**tokenization_ns_kor.py** 참조   
+
+### 2.프리트레이닝 데이터 만들기
 **Create_pretraining_data.py** 참조
