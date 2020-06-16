@@ -20,7 +20,7 @@ BERT는 사전 단어의 갯수가 30000개라고 치면 히든 레이어가 768
 ### 2) Cross-layer parameter sharing
 
 ALBERT는 Layer 간 파라미터를 공유합니다.
-<img src = "https://user-images.githubusercontent.com/45644085/84725316-4d636880-afc5-11ea-80af-98db8e57da5f.png" align = "left">   
+<img src = "https://user-images.githubusercontent.com/45644085/84725316-4d636880-afc5-11ea-80af-98db8e57da5f.png" align = "center">   
 
 
 
