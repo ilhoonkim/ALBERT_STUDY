@@ -46,6 +46,6 @@ ALBERT에서는 기존 tokenization과는 달리 .txt 확장자의 사전 파일
 **tokenization_ns_kor.py** 참조   
 
 ### 2.프리트레이닝 데이터 만들기   
-사전학습 파일을 만드는 create_pretraining_data의 경우에도 spm 관련 코드가 존재하였는데 마찬가지로 해당 부분은 사용하지 않기로 하여 주석처리 하였습니다. 이외에 다른 부분은 변경하지 않았습니다.
+사전학습 파일을 만드는 create_pretraining_data의 경우에도 spm 관련 코드가 존재하였는데 마찬가지로 해당 부분은 사용하지 않기로 하여 주석처리 하였습니다. 이외에 다른 부분은 변경하지 않았습니다.   
 **Create_pretraining_data_ns.py** 참조
 
