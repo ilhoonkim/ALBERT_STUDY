@@ -16,8 +16,7 @@ ALBERT config 파일을 보니 기존 BERT와의 차이를 한눈에 알 수 있
 BERT의 경우 사전의 크기(사전 단어의 갯수)가 꽤 많은 편인데요. 이런 사전 단어들을 임베딩하는데 꽤나 큰 파라미터 사이즈가 발생하게 됩니다.   
 ALBERT에서는 V(사전 크기)를 바로 H(hidden layer size)로 임베딩 시키는 것이 아니라 보다 작은 E(embedding size)로 매핑을 한 후에 E 벡터를 다시 H로 보내게 됩니다.    
 이렇게 되면 기존 VⅩH 였던 파라미터 사이즈가 VⅩE + EⅩH 로 줄어들게 됩니다.   
-BERT는 사전 단어의 갯수가 30000개라고 치면 히든 레이어가 768개일 때 파라미터 사이즈는 23,040,000개나 되는데 반면 ‬ALBERT는 30000 X 128 + 128 X 768 = 3,938,304‬ 개의 파라미터 사이즈를 가지게 됩니다.   
-최종적인 파라미터 사이즈는 BASE 모델 기준으로 BERT는 110M , ALBERT는 12M 으로 9배의 차이가 납니다.
+BERT는 사전 단어의 갯수가 30000개라고 치면 히든 레이어가 768개일 때 파라미터 사이즈는 23,040,000개나 되는데 반면 ‬ALBERT는 30000 X 128 + 128 X 768 = 3,938,304‬ 개의 파라미터 사이즈를 가지게 됩니다.
 
 
 ### 2) Cross-layer parameter sharing
@@ -27,7 +26,8 @@ ALBERT는 Layer 간 파라미터를 공유합니다.
 <img src = "https://user-images.githubusercontent.com/45644085/84725316-4d636880-afc5-11ea-80af-98db8e57da5f.png" align = "center">   
 
 Layer 간에 파라미터를 공유한다고 하더라도 모델 성능이 거의 떨어지지 않는다는 것은 논문 실험결과를 통해 검증이 되어 있습니다. 그 이유에 대해서는 자세히 설명되어 있지는 않아 조금 더 공부를 할 필요가 있습니다.   
-이러한 방식때문에 ALBERT는 Layer 갯수만큼 파라미터 사이즈가 늘어나는 일이 없게 되었습니다. 
+이러한 방식때문에 ALBERT는 Layer 갯수만큼 파라미터 사이즈가 늘어나는 일이 없게 되었습니다.   
+Factorization of embedding parameters과 Cross-layer parameter sharing의 방식으로 인해 최종적인 파라미터 사이즈는 BASE 모델 기준으로 BERT는 110M , ALBERT는 12M 으로 9배의 차이가 납니다.
 
 ### 3) SOP(Sentence Order Prediction) loss
 ![그림1](https://user-images.githubusercontent.com/45644085/84726625-468a2500-afc8-11ea-9ed8-118f66cc7403.png)   
