@@ -11,7 +11,8 @@ ALBERT config 파일을 보니 기존 BERT와의 차이를 한눈에 알 수 있
 바로 embedding size가 추가된 것인데요. ALBERT의 핵심 중 하나는 바로 이것입니다.   
 기존 BERT의 경우는 hidden_size와 embedding_size를 동일하게 가져갔던 것과 달리 ALBERT는 embedding_size를 중간에 개입시켜 파라미터 수를 축소시켰습니다.
 
-![그림1](https://user-images.githubusercontent.com/45644085/84724456-391e6c00-afc3-11ea-8107-9c4eb8be27c7.png)   
+![84724456-391e6c00-afc3-11ea-8107-9c4eb8be27c7](https://user-images.githubusercontent.com/45644085/85256628-8442ee00-b49f-11ea-8052-4c1e50ed4b99.png)
+
 
 BERT의 경우 사전의 크기(사전 단어의 갯수)가 꽤 많은 편인데요. 이런 사전 단어들을 임베딩하는데 꽤나 큰 파라미터 사이즈가 발생하게 됩니다.   
 ALBERT에서는 V(사전 크기)를 바로 H(hidden layer size)로 임베딩 시키는 것이 아니라 보다 작은 E(embedding size)로 매핑을 한 후에 E 벡터를 다시 H로 보내게 됩니다.    
