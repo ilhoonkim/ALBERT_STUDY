@@ -53,7 +53,8 @@ ALBERT에서는 기존 tokenization과는 달리 .txt 확장자의 사전 파일
 
 ### 3.사전학습 하기
 기존 BERT와 큰 차이는 없습니다. 튜토리얼대로 그대로 돌리면 되겠습니다.   
-```python run_pretraining.py \
+```
+python run_pretraining.py \
     --input_file=... \
     --output_dir=... \
     --init_checkpoint=... \
