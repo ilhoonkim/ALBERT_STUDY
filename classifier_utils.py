@@ -272,22 +272,22 @@ class Sst2Processor(DataProcessor):
   def get_train_examples(self, data_dir):
     """See base class."""
     return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "SST-2", "train_bank.tsv")), "train")
+        self._read_tsv(os.path.join(data_dir, "SST-2", "train.tsv")), "train")
 
   def get_dev_examples(self, data_dir):
     """See base class."""
     return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "SST-2", "dev_bank.tsv")), "dev")
+        self._read_tsv(os.path.join(data_dir, "SST-2", "dev.tsv")), "dev")
 
   def get_test_examples(self, data_dir):
     """See base class."""
     return self._create_examples(
-        self._read_tsv(os.path.join(data_dir, "SST-2", "test_bank.tsv")), "test")
+        self._read_tsv(os.path.join(data_dir, "SST-2", "test.tsv")), "test")
 
   def get_labels(self):
     """See base class."""
-    return ["OTP인증센터","거래목적증빙 문의","계좌정보 변경/재등록","계좌정보 조회","공인인증센터","대출 금리","대출 만기","대출 상환","대출 서류","대출 신청","대출 실행","대출 심사","대출 이자","대출 한도","사고신고","서류발급서비스","예금/적금 납입","예금/적금 신규","예금/적금 우대금리","예금/적금 해지","이체업무","입출금통지서비스","자동화기기","카드발급 문의","카드배송 문의","카드실적 문의","카드이용 문의","카드이용 혜택","카드해지 문의","회원가입","회원정보 변경","회원탈퇴"]
-
+    return ["1","0"]
+  
   def _create_examples(self, lines, set_type):
     """Creates examples for the training and dev sets."""
     examples = []
