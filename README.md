@@ -70,3 +70,24 @@ ALBERT에서는 기존 tokenization과는 달리 .txt 확장자의 사전 파일
     --num_warmup_steps=3125 \
     --save_checkpoints_steps=5000
 ```
+### 4.전이학습 하기
+전이학습도 spm_mode를 가져오는 부분이 있어서 그 부분을 주석처리하여 사용하지 않도록 전체적으로 변경하였습니다. 변경된 파일은 run_classifier, classifier_utils, fine_tuning_utils 입니다. tokenization 파일은 사전학습 파일을 생성할 때 변경한 버전을 그대로 사용합니다.   
+```python -run_classifier.py \
+  --data_dir=... \
+  --output_dir=... \
+  --init_checkpoint=... \
+  --albert_config_file=... \
+  --spm_model_file=... \
+  --do_train \
+  --do_eval \
+  --do_predict \
+  --do_lower_case \
+  --max_seq_length=128 \
+  --optimizer=adamw \
+  --task_name=sst-2 \
+  --warmup_step=1000 \
+  --learning_rate=1e-5 \
+  --train_step=10000 \
+  --save_checkpoints_steps=1000 \
+  --train_batch_size=128
+```
