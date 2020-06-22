@@ -51,3 +51,22 @@ ALBERT에서는 기존 tokenization과는 달리 .txt 확장자의 사전 파일
 사전학습 파일을 만드는 create_pretraining_data의 경우에도 spm 관련 코드가 존재하였는데 마찬가지로 해당 부분은 사용하지 않기로 하여 주석처리 하였습니다. 이외에 다른 부분은 변경하지 않았습니다.   
 **Create_pretraining_data_ns.py** 참조
 
+### 3.사전학습 하기
+기존 BERT와 큰 차이는 없습니다. 튜토리얼대로 그대로 돌리면 되겠습니다.   
+```python run_pretraining.py \
+    --input_file=... \
+    --output_dir=... \
+    --init_checkpoint=... \
+    --albert_config_file=... \
+    --do_train \
+    --do_eval \
+    --train_batch_size=32 \
+    --eval_batch_size=32 \
+    --max_seq_length=128 \
+    --max_predictions_per_seq=20 \
+    --optimizer='lamb' \
+    --learning_rate=.00176 \
+    --num_train_steps=125000 \
+    --num_warmup_steps=3125 \
+    --save_checkpoints_steps=5000
+```
