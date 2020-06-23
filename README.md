@@ -72,7 +72,9 @@ python run_pretraining.py \
     --save_checkpoints_steps=5000
 ```
 ### 4.전이학습 하기
+기존 BERT에서는 하나의 run_classifier에 정리되어 있던 코드들이 ALBERT에 와서는 TASK Class들을 정리한  classifier_utils과 모델 및  사전을 어떻게 만들지 결정하는 fine_tuning_utils, 전이학습을 실행하는 run_classifier 3개로 나뉘어져 있습니다.   
 전이학습도 spm_mode를 가져오는 부분이 있어서 그 부분을 주석처리하여 사용하지 않도록 전체적으로 변경하였습니다. 변경된 파일은 run_classifier, classifier_utils, fine_tuning_utils 입니다. tokenization 파일은 사전학습 파일을 생성할 때 변경한 버전을 그대로 사용합니다.   
+
 ```
 python -run_classifier.py \
   --data_dir=... \
